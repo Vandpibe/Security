@@ -1,5 +1,5 @@
 {
-    "name" : "vandpibe/skeleton",
+    "name" : "vandpibe/security",
     "type" : "library",
     "description" : "Security",
     "license" : "MIT",
@@ -13,8 +13,7 @@
         }
     },
     "require" : {
-        "php"                : ">=5.3.3"
-    },
-    "require-dev" : {
+        "php"                : ">=5.3.3",
+        "symfony/security"   : "2.1.*"
     }
 }
