@@ -1,7 +1,7 @@
 {
     "name" : "vandpibe/skeleton",
     "type" : "library",
-    "description" : "Skeleton",
+    "description" : "Security",
     "license" : "MIT",
     "authors" : [{
         "name" : "Henrik Bjornskov",
@@ -9,7 +9,7 @@
     }],
     "autoload" : {
         "psr-0" : {
-            "Vandpibe\\Skeleton" : "lib"
+            "Vandpibe\\Security" : "lib"
         }
     },
     "require" : {
