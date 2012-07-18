@@ -12,6 +12,7 @@
             "Vandpibe\\Security" : "lib"
         }
     },
+    "minimum-stability" : "dev",
     "require" : {
         "php"                : ">=5.3.3",
         "symfony/security"   : "2.1.*"
