@@ -25,7 +25,7 @@ class BCryptPasswordEncoderTest extends \PHPUnit_Framework_TestCase
 
     public function testEncodePassword()
     {
-        $regExp = '/^' . preg_quote('$2a$05$') . '.+$/';
+        $regExp = '/^' . preg_quote('$2y$05$') . '.+$/';
 
         $this->assertRegExp($regExp, $this->encoder->encodePassword('password', null));
     }

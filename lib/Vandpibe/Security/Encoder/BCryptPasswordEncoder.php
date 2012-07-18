@@ -49,7 +49,7 @@ class BCryptPasswordEncoder extends \Symfony\Component\Security\Core\Encoder\Bas
      */
     public function encodePassword($raw, $salt)
     {
-        return crypt($raw, '$2a$' . $this->cost . '$' . $this->generateRandomSalt() . '$');
+        return crypt($raw, '$2y$' . $this->cost . '$' . $this->generateRandomSalt() . '$');
     }
 
     /**
