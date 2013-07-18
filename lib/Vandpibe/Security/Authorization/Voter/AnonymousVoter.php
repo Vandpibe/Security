@@ -59,15 +59,15 @@ class AnonymousVoter implements \Symfony\Component\Security\Core\Authorization\V
      */
     public function vote(TokenInterface $token, $object, array $attributes)
     {
-        foreach ($attributes as $attribute) {
-            if (false == $this->supportsAttribute($attribute)) {
-                continue;
-            }
-
-            return $this->resolver->isAnonymous() ? VoterInterface::ACCESS_GRANTED : VoterInterface::ACCESS_DENIED;
+        if (!array_filter($attributes, array($this, 'supportsAttribute'))) {
+            // None of the attributes is supported so we will abstain from voting.
+            return VoterInterface::ACCESS_ABSTAIN;
         }
 
-        // None of the attributes is supported so we will abstain from voting.
-        return VoterInterface::ACCESS_ABSTAIN;
+        if ($this->resolver->isAnonymous()) {
+            return VoterInterface::ACCESS_GRANTED;
+        }
+
+        return VoterInterface::ACCESS_DENIED;
     }
 }
